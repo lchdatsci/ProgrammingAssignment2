@@ -1,13 +1,13 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
-
 ## This function stores a matrix object and a single
-## cached value.
+## cached value. It contains functions to store and
+## query the matrix, and the cache value. The cache
+## can be used to store any single computed result
+## from the matrix.
+
 makeCacheMatrix <- function(x = matrix()) {
   ## Generic value that you want to cache
   cache <- NULL
+
   ## Setter. Sets argument to 'x'. Clear cache
   set <- function(y) {
           x <<- y
@@ -16,8 +16,12 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   ## Getter
   get <- function() x
+
+  ## Setter and Getter of the cache values
   setcache <- function(val) cache <<- val
   getcache <- function() cache
+
+  ## Return the object
   list(set = set, get = get,
        setcache = setcache,
        getcache = getcache)

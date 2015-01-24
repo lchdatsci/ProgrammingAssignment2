@@ -24,7 +24,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function queries the object associated with
+## a matrix for a valid cache value. If present, it
+## returns it, else it calculates the inverse of
+## the objects data (i.e. the matrix), stores it in
+## the cache and returns the calculated inverse.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
